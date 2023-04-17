@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 from .views import UsuarioViewSet, UsuarioLoginApiView, UsuarioPerfilFeedView
 
 router = DefaultRouter()
-router.register('perfil', UsuarioViewSet, basename='perfil')
+router.register('perfil', UsuarioViewSet)
 router.register('perfilfeed', UsuarioPerfilFeedView, basename='perfil')
 
 
