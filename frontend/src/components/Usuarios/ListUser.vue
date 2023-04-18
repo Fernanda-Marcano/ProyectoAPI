@@ -4,12 +4,9 @@
             <div class="col text-left">
                 <h2>Listado de usuarios</h2>
                 <div class="col-md-12">
-                    <b-table striped hover :items="usuario" :fields="fields">
-                        <template v-slot:actions>
-                            <template v-slot:actions-right>
-                                <b-button size="sm" variant="outline-primary" @click="EditarUsuario(usuario)">Editar</b-button>
-                                <b-button size="sm" variant="outline-danger" @click="EliminarUsuario(usuario)">Eliminar</b-button>
-                            </template>
+                    <b-table striped hover :items="usuario" :fields="fields">                        
+                        <template slot="action" slot-scope="data">
+                                <b-button size="sm" variant="primary" :to="{ name:'EditarUsuario', params: {userId: data.item.id} }">Editar</b-button>
                         </template>
                     </b-table>
                 </div>
@@ -31,8 +28,8 @@
                     {key: 'username', label: 'username'},
                     {key: 'email', label: 'email'},
                     {key: 'nombres', label: 'nombres'},
-                    {key: 'apellido', label: 'apellido'},
-                    {key: 'estado', label: 'estado'},
+/*                     {key: 'apellido', label: 'apellido'}, */
+/*                     {key: 'estado', label: 'estado'}, */
                     {key: 'is_staff', label: 'staff'}
                 ],
                 usuario: []

@@ -20,7 +20,7 @@ export default new Router({
       component: ListUser
     },
     {
-      path: '/usuarios/editar',
+      path: '/usuarios/:userId/editar',
       name: 'EditarUsuario',
       component: EditarUsuario
     }
